@@ -6,7 +6,6 @@ tags:
   - 破解版
   - PC版
 categories:
-  - 实用软件
   - 破解版
 ---
 
