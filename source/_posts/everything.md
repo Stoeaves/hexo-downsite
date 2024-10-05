@@ -17,6 +17,12 @@ categories:
 
 ---
 
+### 程序截图
+
+![程序截图](https://cdn.jsdelivr.net/gh/Niomaor/hexoimages@main/1728106859000.png)
+
+---
+
 ### 使用方式
 
 安装后运行即可
