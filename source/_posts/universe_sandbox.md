@@ -33,5 +33,4 @@ categories:
 
 ### 下载方式
 
-[本站下载](https://hub.tplus.eu.org/Niomaor/dlfiles/raw/master/Universe.Sandbox.2.v34.0.2.7z)
 [百度网盘下载 - 提取码：unsa](https://pan.baidu.com/s/10E31cPdgyjO7J1vTR5ljrw?pwd=unsa)
