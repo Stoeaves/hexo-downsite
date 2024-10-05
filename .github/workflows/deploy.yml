@@ -10,7 +10,7 @@ jobs:
     - name: Build and Deploy
       uses: renzhaosy/hexo-deploy-action@master
       env:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         PUBLISH_REPOSITORY: Niomaor/downsite
         BRANCH: gh-pages
         PUBLISH_DIR: ./
