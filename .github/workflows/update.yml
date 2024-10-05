@@ -1,50 +1,100 @@
-name: UpdateSite
+name: Site CI
 
 on:
+  pull_request:
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  build:
+  hexo_build_and_deploy_github_pages:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      # from: https://github.com/actions/checkout
+      - name: Checkout Repository main branch
+        uses: actions/checkout@main
+
+      # from: https://github.com/actions/setup-node
+      - name: Setup Node.js
+        uses: actions/setup-node@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
-      - name: Use Node.js 13.14
-        uses: actions/setup-node@v4
+          node-version: "21.7.3"
+
+      - name: Setup Hexo Blog Dependencies
+        run: |
+          npm install hexo-cli -g
+          npm install
+
+      - name: Add SSH private key to allow access to repository
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          cat <<EOT >> ~/.ssh/config
+          Host github.com
+          HostName github.com
+          IdentityFile ~/.ssh/id_rsa
+          EOT
+
+      - name: Release GitHub Pages
+        run: |
+          git config --global user.email "1329441308@qq.com"
+          git config --global user.name "yeshan333"
+          git clone git@github.com:yeshan333/yeshan333.github.io.git .deploy_git
+          chmod 755 -R .deploy_git
+          hexo clean
+          hexo generate
+          hexo deploy
+
+      - name: Upload artifact deploy_git folder
+        uses: actions/upload-artifact@main
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: "13.14"
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+          name: deploy_git
+          path: |
+            .deploy_git/
+
+  rsync_artifact_to_personal_cloud_machine:
+    needs: hexo_build_and_deploy_github_pages
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+
+      - name: Download artifact deploy_git folder
+        uses: actions/download-artifact@main
+        with:
+          name: deploy_git
+          path: |
+            .deploy_git/
+      
+      - name: change .deploy_git folder permission
+        run: |
+          chmod 755 -R .deploy_git
+
+      # from https://github.com/yeshan333/rsync-deploy-action
+      # - name: Release blog to Tecentyun Lighthouse Instance (simin)
+      #   uses: yeshan333/rsync-deploy-action@v1.1.0
+      #   with:
+      #     ssh_login_username: ${{ secrets.SSH_LOGIN_USERNAME }}
+      #     remote_server_ip: ${{ secrets.REMOTE_BACKUP_SERVER_IP }}
+      #     ssh_port: ${{ secrets.BACKUP_SSH_PORT }}
+      #     ssh_private_key: ${{ secrets.SSH_BACKUP_PRIVATE_KEY }}
+      #     source_path: ./.deploy_git/*
+      #     destination_path: ${{ secrets.REMOTE_RSYNC_TARGET_PATH }}
+      #     rsync_args: --exclude="./.deploy_git/.git/*"
+
+      # from https://github.com/yeshan333/rsync-deploy-action
+      - name: Release blog to Tecentyun Lighthouse Instance (myself)
+        uses: yeshan333/rsync-deploy-action@v1.1.0
+        with:
+          ssh_login_username: ${{ secrets.SSH_LOGIN_USERNAME }}
+          remote_server_ip: ${{ secrets.REMOTE_SERVER_IP }}
+          ssh_port: ${{ secrets.BACKUP_SSH_PORT }}
+          ssh_private_key: ${{ secrets.SSH_BACKUP_PRIVATE_KEY }}
+          source_path: ./.deploy_git/*
+          destination_path: ${{ secrets.REMOTE_RSYNC_TARGET_PATH }}
+          rsync_args: --exclude="./.deploy_git/.git/*"
