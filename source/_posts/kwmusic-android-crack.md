@@ -20,9 +20,9 @@ categories:
 
 ### 程序截图
 
-![程序截图 - 1](https://cdn.jsdelivr.net/gh/Niomaor/hexoimages@main/1725688345000.jpg)
+![程序截图 - 1](https://cdn-jsdelivr.pages.dev/gh/Niomaor/hexoimages@main/1725688345000.jpg)
 
-![程序截图 - 2](https://cdn.jsdelivr.net/gh/Niomaor/hexoimages@main/1725688379000.jpg)
+![程序截图 - 2](https://cdn-jsdelivr.pages.dev/gh/Niomaor/hexoimages@main/1725688379000.jpg)
 
 ---
 
