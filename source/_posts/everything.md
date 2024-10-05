@@ -2,10 +2,10 @@
 title: Everything搜索工具
 date: 2024-10-05 13:30:00
 tags:
-  - 实用工具
+  - 实用软件
   - PC版
 categories:
-  - 实用工具
+  - 实用软件
 ---
 
 [toc]
