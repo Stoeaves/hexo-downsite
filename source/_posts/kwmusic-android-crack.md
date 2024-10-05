@@ -18,9 +18,7 @@ categories:
 
 ---
 
-之前分享了一款PC版酷我音乐破解版，[点我传送](/article/3cb9b4552ba5.html)
-
-这次手机版的来啦~
+### 程序截图
 
 ![程序截图 - 1](https://cdn.jsdelivr.net/gh/Niomaor/hexoimages@main/1725688345000.jpg)
 
