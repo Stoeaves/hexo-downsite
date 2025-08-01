@@ -100,11 +100,3 @@ theme: 3-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/Niomaor/downsite.git
-  #repo: git@github.com:Niomaor/niomaor.github.io.git
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: main
-  token: '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'
-  name: Niomaor
