@@ -20,7 +20,7 @@ categories:
 
 ### 程序截图
 
-![](https://cdn-jsdelivr.pages.dev/gh/Niomaor/hexoimages@main/1728110368000.png)
+![](https://cdn.jsdmirror.com/gh/Stoeaves/downsite-images@main/1728110368000.png)
 
 ---
 
@@ -32,6 +32,5 @@ categories:
 
 ### 下载方式
 
-[本站下载](https://hub.tplus.eu.org/Niomaor/dlfiles/raw/master/SpaceSniffer v1.3.0.2_CHS.exe)
 [蓝奏云盘下载 - 提取码：spsn](https://wwqd.lanzoul.com/ie4Zu2bokmsd)
 [百度网盘下载 - 提取码：spsn](https://pan.baidu.com/s/17TrY-4Jw69Lh6C1PadywtQ?pwd=spsn)
