@@ -20,7 +20,7 @@ categories:
 
 ### 程序截图
 
-![程序截图](https://cdn.jsdmirror.com/gh/Niomaor/hexoimages@main/1728109429000.png)
+![程序截图](https://cdn.jsdmirror.com/gh/Stoeaves/downsite-images@main/1728109429000.png)
 
 ---
 
