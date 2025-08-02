@@ -27,6 +27,5 @@ categories:
 
 ### 下载方式
 
-[本站下载](https://hub.tplus.eu.org/Niomaor/dlfiles/raw/master/Notepad_plus_plus_V8.6.4.exe)
 [蓝奏云盘下载 - 提取码：note](https://www.lanzouj.com/iHTsM28b6j0h)
 [百度网盘下载 - 提取码：note](https://pan.baidu.com/s/1YUGq4SVO0Q7EjQbvST5D8A?pwd=note)
