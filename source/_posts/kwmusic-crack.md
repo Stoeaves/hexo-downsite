@@ -28,6 +28,5 @@ categories:
 
 ### 下载方式
 
-[本站下载](https://hub.tplus.eu.org/Niomaor/dlfiles/raw/master/酷我音乐PC破解版.7z)
 [蓝奏云盘下载 - 提取码：kwyy](https://www.lanzouj.com/ikCvh28b0n2h)
 [百度网盘下载 - 提取码：kwyy](https://pan.baidu.com/s/1XwVAFAFqSvUBPJMwHzm3OQ?pwd=kwyy)
