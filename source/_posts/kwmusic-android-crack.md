@@ -20,13 +20,12 @@ categories:
 
 ### 程序截图
 
-![程序截图 - 1](https://cdn-jsdelivr.pages.dev/gh/Niomaor/hexoimages@main/1725688345000.jpg)
+![程序截图 - 1](https://cdn.jsdmirror.com/gh/Stoeaves/downsite-images@main/1725688345000.jpg)
 
-![程序截图 - 2](https://cdn-jsdelivr.pages.dev/gh/Niomaor/hexoimages@main/1725688379000.jpg)
+![程序截图 - 2](https://cdn.jsdmirror.com/gh/Stoeaves/downsite-images@main/1725688379000.jpg)
 
 ---
 
 ### 下载方式
 
-[本站下载](https://hub.tplus.eu.org/Niomaor/dlfiles/raw/master/酷我音乐破解版.apk)
-[百度网盘下载 - 提取码：kwyy](https://pan.baidu.com/s/1ZgzhjNybF_H3fzT-erFyOw?pwd=kwyy)
+暂无
